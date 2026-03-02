@@ -2,6 +2,8 @@
 
 **Analytics engagement for GreenTrail Outdoor Co.** — a 12-store regional outdoor recreation retailer with $8M annual revenue.
 
+> **[Read the Executive Insights Brief](docs/insights_brief.md)** — the 3-page deliverable with root cause analysis and recommendations
+
 ## Engagement Context
 
 GreenTrail's CEO observed that 4 of 12 stores were declining while the remaining 8 continued to grow. With no existing analytics capability, she commissioned a 2-week investigation to identify root causes and recommend corrective action. The deliverable: a 3-page executive brief she can act on immediately.
