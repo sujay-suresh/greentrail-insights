@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: pos
+    schema: greentrail
+    description: GreenTrail Outdoor Co. point-of-sale data
+    tables:
+      - name: stores
+        description: Store locations and metadata
+        columns:
+          - name: store_id
+            tests:
+              - unique
+              - not_null
+      - name: products
+        description: Product catalog (500 SKUs across 6 categories)
+        columns:
+          - name: product_id
+            tests:
+              - unique
+              - not_null
+      - name: customers
+        description: Customer demographics
+        columns:
+          - name: customer_id
+            tests:
+              - unique
+              - not_null
+      - name: transactions
+        description: Line-item transaction records
+      - name: daily_store_sales
+        description: Pre-aggregated daily revenue by store

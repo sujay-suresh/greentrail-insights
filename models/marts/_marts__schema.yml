@@ -1,0 +1,48 @@
+version: 2
+
+models:
+  - name: dim_stores
+    description: Store dimension with town demographics and competitor data
+    columns:
+      - name: store_id
+        tests:
+          - unique
+          - not_null
+      - name: town_population
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: 1000
+                max_value: 50000
+
+  - name: dim_products
+    description: Product dimension with category hierarchy
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+      - name: category
+        tests:
+          - accepted_values:
+              values: ['camping', 'hiking', 'fishing', 'hunting', 'cycling', 'general_outdoor']
+
+  - name: dim_date
+    description: Date dimension spanning the analysis period
+    columns:
+      - name: date_day
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_daily_store_sales
+    description: "Grain: store x date x product_category"
+    columns:
+      - name: daily_sale_id
+        tests:
+          - unique
+          - not_null
+      - name: revenue
+        tests:
+          - not_null
